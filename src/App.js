@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
 
-function App() {
+
+export class App extends Component {
+  state = {
+    Contacts: []
+  }
+ 
+
+
+  render() {
+    
+
+    return (
+
+      <div>
+        <AddContact/>
+        <SearchContact/>
+        <ShowContact/> 
+
+
+      </div>
+    )
+  }
+}
+
+const AddContact = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Add Contact</p>
+      <imput type='text'>hoo</imput>
+      <button onClick={props.buttonFunction}>Submit</button>
     </div>
-  );
+  )
+};
+
+const SearchContact = () => {
+  return (
+    <div> 
+      <p>Search Contact</p>
+      <imput type='text'></imput>
+      <button>Submit</button>
+    </div>
+  )
+};
+
+const ShowContact = () => {
+  return (
+    <div>
+      <li>number 1</li>
+
+    </div>
+  )
 }
 
 export default App;
